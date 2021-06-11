@@ -137,9 +137,9 @@ zinit as="completion" for \
     OMZP::rust/_rust \
     OMZP::fd/_fd
 
-source /etc/grc.zsh
-source ~/.travis/travis.sh
-source ~/Coding/shell/zvm/zvm.zsh
+# source /etc/grc.zsh
+# source ~/.travis/travis.sh
+# source ~/Coding/shell/zvm/zvm.zsh
 
 zstyle ':zce:*' keys 'asdghklqwertyuiopzxcvbnmfj;23456789'
 
@@ -157,22 +157,22 @@ done
 
 # ==== 加载并配置 fzf-tab ====
 
-source ~/Coding/shell/fzf-tab/fzf-tab.zsh
+# zinit light Aloxaf/fzf-tab
 
-zstyle ':fzf-tab:complete:_zlua:*' query-string input
-zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
-zstyle ':fzf-tab:complete:kill:argument-rest' fzf-flags '--preview-window=down:3:wrap'
-zstyle ':fzf-tab:complete:kill:*' popup-pad 0 3
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
-zstyle ":fzf-tab:*" fzf-flags --color=bg+:23
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-zstyle ':fzf-tab:*' switch-group ',' '.'
-zstyle ":completion:*:git-checkout:*" sort false
-zstyle ':completion:*' file-sort modification
-zstyle ':completion:*:exa' sort false
-zstyle ':completion:files' sort false
-zstyle ':fzf-tab:*:*argument-rest*' popup-pad 100 0
+# zstyle ':fzf-tab:complete:_zlua:*' query-string input
+# zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
+# zstyle ':fzf-tab:complete:kill:argument-rest' fzf-flags '--preview-window=down:3:wrap'
+# zstyle ':fzf-tab:complete:kill:*' popup-pad 0 3
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+# zstyle ":fzf-tab:*" fzf-flags --color=bg+:23
+# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+# zstyle ':fzf-tab:*' switch-group ',' '.'
+# zstyle ":completion:*:git-checkout:*" sort false
+# zstyle ':completion:*' file-sort modification
+# zstyle ':completion:*:exa' sort false
+# zstyle ':completion:files' sort false
+# zstyle ':fzf-tab:*:*argument-rest*' popup-pad 100 0
 # zstyle ':fzf-tab:*:*argument-rest*' fzf-preview '
 # echo desc: $desc
 # echo word: $word
@@ -195,8 +195,7 @@ zstyle ':fzf-tab:*:*argument-rest*' popup-pad 100 0
 # ==== ====
 
 # https://blog.lilydjwg.me/2015/7/26/a-simple-zsh-module.116403.html
-zmodload aloxaf/subreap
-subreap
+zmodload subreap 2>/dev/null && subreap
 
 set_fast_theme() {
     FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}alias]='fg=blue'
@@ -207,7 +206,7 @@ set_fast_theme() {
 
 zinit light-mode for \
     atload="set_fast_theme" \
-        zdharma/fast-syntax-highlighting \
+    zdharma/fast-syntax-highlighting \
     zsh-users/zsh-autosuggestions
 
 # ==== 加载主题 ====
