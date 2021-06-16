@@ -41,6 +41,7 @@ autoload -Uz zcalc zmv zargs
 
 # ==== 某些插件需要的设置 ====
 
+# zsh-history
 HISTDB_FILE=$ZDOTDIR/.zsh-history.db
 # return the latest used command in the current directory
 _zsh_autosuggest_strategy_histdb_top_here() {
@@ -136,9 +137,11 @@ zinit as="completion" for \
     OMZP::docker/_docker \
     OMZP::rust/_rust \
     OMZP::fd/_fd
-
+# 着色器? https://github.com/garabik/grc
 # source /etc/grc.zsh
+# CI?
 # source ~/.travis/travis.sh
+# zsh 版本管理
 # source ~/Coding/shell/zvm/zvm.zsh
 
 zstyle ':zce:*' keys 'asdghklqwertyuiopzxcvbnmfj;23456789'
